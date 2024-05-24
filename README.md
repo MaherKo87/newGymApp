@@ -1,0 +1,2 @@
+# newGymApp
+simple training diary
