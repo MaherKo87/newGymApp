@@ -36,6 +36,7 @@ const LogIn = () => {
 
   return (
     <div id="login-component-template">
+      <h1>GymApp</h1>
       <div id="login-container">
         <h2>Login</h2>
         {error && <div id="error-message">{error}</div>}
@@ -66,6 +67,9 @@ const LogIn = () => {
         </form>
         <p>New here? <Link to='/register'>Create an account</Link></p>
       </div>
+      <footer>
+        <p>&copy; 2024 Gym Log</p>
+      </footer>
     </div>
   );
 };

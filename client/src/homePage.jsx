@@ -36,17 +36,20 @@ const HomePage = () => {
   }
 
   return (
-    <div>
-      <header>
-        <h1>Gym Log</h1>
-      </header>
-      <h1>Welcome, {username}!</h1>
-      <div>
-        <button onClick={startWorkout}>Start Workout</button>
-        <button onClick={tools}>Tools</button>
-        <button onClick={profileInfo}>Profile</button>
-        <button onClick={handleLogout}>Logout</button>
+    <div id="homepage-component-template">
+      <h1>GymApp</h1>
+      <div id="homepage-container">
+        <h2>Welcome, {username}!</h2>
+        <div className="workout-buttons">
+          <button onClick={startWorkout}>Start Workout</button>
+          <button onClick={tools}>Tools</button>
+          <button onClick={profileInfo}>Profile</button>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
       </div>
+      <footer>
+        <p>&copy; 2024 Gym Log</p>
+      </footer>
     </div>
   );
 };

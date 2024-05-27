@@ -1,0 +1,126 @@
+/* Base styles */
+body {
+    font-family: 'Lato', sans-serif; /* Apply Lato to the entire body */
+    background: url('/background.jpeg') no-repeat center center fixed; /* Add the background image */
+    background-size: cover; /* Ensure the background image covers the entire page */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent body from scrolling */
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Apply Poppins to all h1, h2, and h3 elements */
+  }
+  
+  #login-component-template, #signup-component-template, #homepage-component-template, #profile-component-template, #gym-log-component-template, #tools-component-template {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh; /* Ensure container does not exceed viewport height */
+    overflow-y: auto; /* Allow scrolling within the container */
+    padding: 1em;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8); /* Add a white background with transparency for readability */
+    border-radius: 8px;
+  }
+  
+  #login-component-template h1, #signup-component-template h1, #homepage-component-template h1, #profile-component-template h1, #gym-log-component-template h1, #tools-component-template h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  
+  #homepage-container, #tools-container {
+    width: 100%;
+  }
+  
+  .search-section, .history-section {
+    margin-bottom: 1em;
+  }
+  
+  .search-section input {
+    width: calc(100% - 110px); /* Adjust input width */
+    padding: 0.5em;
+    margin-right: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 4px;
+    background-color: #953e3edd;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em; /* Add margin for spacing */
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #494b4d;
+  }
+  
+  footer {
+    margin-top: 1em;
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9em;
+  }
+  
+  /* Styles for GymLog buttons */
+  #gym-log-container .workout-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  #gym-log-container .workout-buttons button {
+    width: auto;
+    margin: 0;
+  }
+  
+  /* Styles for exercise details */
+  #exercise-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Ensure it does not exceed the screen width */
+  }
+  
+  .details-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 360px; /* Ensure the row does not exceed the container width */
+    margin-bottom: 10px;
+  }
+  
+  .details-row input {
+    flex: 1;
+    width: 60px; /* Set a fixed width for inputs */
+    margin: 0 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .details-row label {
+    flex: 1;
+    width: 60px; /* Set a fixed width for labels */
+    margin: 0 5px;
+    text-align: center;
+  }
+  

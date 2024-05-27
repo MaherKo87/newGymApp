@@ -78,54 +78,56 @@ const ProfileInfo = () => {
   } 
 
   return (
-    <div>
-      <h2>Profile Information</h2>
-      <p>Username: {profile.username}</p>
-      <div>
-        <label>
-          Age:
-          <input
-            type="number"
-            name="age"
-            value={profile.age}
-            onChange={handleChange}
-          />
-        </label>
+    <div id="profile-component-template">
+      <h1>GymApp</h1>
+      <div id="profile-container">
+        <h2>Profile Information</h2>
+        <p>Username: {profile.username}</p>
+        <form>
+          <div>
+            <label htmlFor="age">Age:</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              value={profile.age}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="sex">Sex:</label>
+            <select id="sex" name="sex" value={profile.sex} onChange={handleChange}>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="height">Height (cm):</label>
+            <input
+              type="number"
+              id="height"
+              name="height"
+              value={profile.height}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="weight">Weight (kg):</label>
+            <input
+              type="number"
+              id="weight"
+              name="weight"
+              value={profile.weight}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="button" onClick={handleSave}>Save</button>
+          <button type="button" onClick={goHome}>Home</button>
+        </form>
       </div>
-      <div>
-        <label>
-          Sex:
-          <select name="sex" value={profile.sex} onChange={handleChange}>
-            <option value="">Select</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Height (cm):
-          <input
-            type="number"
-            name="height"
-            value={profile.height}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Weight (kg):
-          <input
-            type="number"
-            name="weight"
-            value={profile.weight}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-      <button onClick={handleSave}>Save</button>
-      <button onClick={goHome}>Home</button>
+      <footer>
+        <p>&copy; 2024 Gym Log</p>
+      </footer>
     </div>
   );
 };

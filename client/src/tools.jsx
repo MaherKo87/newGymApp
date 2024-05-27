@@ -91,60 +91,66 @@ const Tools = () => {
   }
 
   return (
-    <div>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter workout type (e.g., chest)"
-          value={workoutQuery}
-          onChange={(e) => setWorkoutQuery(e.target.value)}
-        />
-        <button onClick={() => searchWorkoutsOrExercises('workout')}>Search Workout</button>
-      </div>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter exercise name (e.g., bench press)"
-          value={exerciseQuery}
-          onChange={(e) => setExerciseQuery(e.target.value)}
-        />
-        <button onClick={() => searchWorkoutsOrExercises('exercise')}>Search Exercise</button>
-      </div>
-      {searchResult && <p>{searchResult}</p>}
-      <button onClick={showWorkoutHistory}>Show Workout History</button>
-      {showHistory && (
-        <div>
-          <h2>Workout History</h2>
-          {workoutHistory.length === 0 ? (
-            <p>No workouts found.</p>
-          ) : (
-            <ul>
-              {workoutHistory.map((workout, index) => (
-                <li key={index}>
-                  <strong>Date:</strong> {workout.date}<br />
-                  <strong>Workout Type:</strong> {workout.workoutType}<br />
-                  <strong>Exercises:</strong>
-                  <ul>
-                    {workout.exercises.map((exercise, i) => (
-                      <li key={i}>
-                        {exercise.name}
-                        <ul>
-                          {exercise.sets.map((set, j) => (
-                            <li key={j}>
-                              Set {set.setNumber}: {set.kgs} kgs x {set.reps} reps
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          )}
+    <div id="tools-component-template">
+      <h1>GymApp</h1>
+      <div id="tools-container">
+        <div className="search-section">
+          <input
+            type="text"
+            placeholder="Enter workout type (e.g., chest)"
+            value={workoutQuery}
+            onChange={(e) => setWorkoutQuery(e.target.value)}
+          />
+          <button onClick={() => searchWorkoutsOrExercises('workout')}>Search Workout</button>
         </div>
-      )}
-      <button onClick={goHome}>Home</button>
+        <div className="search-section">
+          <input
+            type="text"
+            placeholder="Enter exercise name (e.g., bench press)"
+            value={exerciseQuery}
+            onChange={(e) => setExerciseQuery(e.target.value)}
+          />
+          <button onClick={() => searchWorkoutsOrExercises('exercise')}>Search Exercise</button>
+        </div>
+        {searchResult && <p>{searchResult}</p>}
+        <button onClick={showWorkoutHistory}>Show Workout History</button>
+        {showHistory && (
+          <div className="history-section">
+            <h2>Workout History</h2>
+            {workoutHistory.length === 0 ? (
+              <p>No workouts found.</p>
+            ) : (
+              <ul>
+                {workoutHistory.map((workout, index) => (
+                  <li key={index}>
+                    <strong>Date:</strong> {workout.date}<br />
+                    <strong>Workout Type:</strong> {workout.workoutType}<br />
+                    <strong>Exercises:</strong>
+                    <ul>
+                      {workout.exercises.map((exercise, i) => (
+                        <li key={i}>
+                          {exercise.name}
+                          <ul>
+                            {exercise.sets.map((set, j) => (
+                              <li key={j}>
+                                Set {set.setNumber}: {set.kgs} kgs x {set.reps} reps
+                              </li>
+                            ))}
+                          </ul>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+        <button onClick={goHome}>Home</button>
+      </div>
+      <footer>
+        <p>&copy; 2024 Gym Log</p>
+      </footer>
     </div>
   );
 };

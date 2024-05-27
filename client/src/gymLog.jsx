@@ -78,48 +78,47 @@ const GymLog = () => {
   }
 
   return (
-    <div id="container">
-      <header>
-        <h1>Gym Log</h1>
-      </header>
-      <main>
-        {!selectedWorkout && !showExerciseList && (
-          <WelcomeUser>Hello {userName}, What are you training today?</WelcomeUser>
-        )}
-        {selectedWorkout && (
-          <h2>{selectedWorkout.charAt(0).toUpperCase() + selectedWorkout.slice(1).replace('-', ' & ')}</h2>
-        )}
-        
-        {showExerciseList && !showExerciseDetails && (
-          <ExerciseList selectedWorkout={selectedWorkout} onExerciseChosen={handleExerciseChosen} />
-        )}
+    <div id="gym-log-component-template">
+      <h1>GymApp</h1>
+      <div id="gym-log-container">
+        <main>
+          {!selectedWorkout && !showExerciseList && (
+            <p className="welcome-user">Hello {userName}, What are you training today?</p>
+          )}
+          {selectedWorkout && (
+            <h2>{selectedWorkout.charAt(0).toUpperCase() + selectedWorkout.slice(1).replace('-', ' & ')}</h2>
+          )}
+          
+          {showExerciseList && !showExerciseDetails && (
+            <ExerciseList selectedWorkout={selectedWorkout} onExerciseChosen={handleExerciseChosen} />
+          )}
 
-        {showExerciseDetails && (
-          <div>
-            <h3>{exerciseName}</h3>
-            <ExerciseDetails exerciseName={exerciseName} onSave={handleSaveExercise} />
-          </div>
-        )}
+          {showExerciseDetails && (
+            <div>
+              <ExerciseDetails exerciseName={exerciseName} onSave={handleSaveExercise} />
+            </div>
+          )}
 
-        {!showExerciseList && !showExerciseDetails && (
-          <div>
-            <button onClick={() => handleWorkoutSelection('chest')}>Chest</button>
-            <button onClick={() => handleWorkoutSelection('back')}>Back</button>
-            <button onClick={() => handleWorkoutSelection('arms')}>Arms</button>
-            <button onClick={() => handleWorkoutSelection('shoulders')}>Shoulders</button>
-            <button onClick={() => handleWorkoutSelection('legs')}>Legs</button>
-            <button onClick={() => handleWorkoutSelection('push')}>Push</button>
-            <button onClick={() => handleWorkoutSelection('pull')}>Pull</button>
-            <button onClick={() => handleWorkoutSelection('chest-back')}>Chest & Back</button>
-            <button onClick={() => handleWorkoutSelection('arms-shoulders')}>Arms & Shoulders</button>
-            <button onClick={() => handleWorkoutSelection('upperbody')}>Upperbody</button>
-            <button onClick={() => handleWorkoutSelection('full-body')}>Full Body</button>
-          </div>
-        )}
+          {!showExerciseList && !showExerciseDetails && (
+            <div className="workout-buttons">
+              <button onClick={() => handleWorkoutSelection('chest')}>Chest</button>
+              <button onClick={() => handleWorkoutSelection('back')}>Back</button>
+              <button onClick={() => handleWorkoutSelection('arms')}>Arms</button>
+              <button onClick={() => handleWorkoutSelection('shoulders')}>Shoulders</button>
+              <button onClick={() => handleWorkoutSelection('legs')}>Legs</button>
+              <button onClick={() => handleWorkoutSelection('push')}>Push</button>
+              <button onClick={() => handleWorkoutSelection('pull')}>Pull</button>
+              <button onClick={() => handleWorkoutSelection('chest-back')}>Chest & Back</button>
+              <button onClick={() => handleWorkoutSelection('arms-shoulders')}>Arms & Shoulders</button>
+              <button onClick={() => handleWorkoutSelection('upperbody')}>Upperbody</button>
+              <button onClick={() => handleWorkoutSelection('full-body')}>Full Body</button>
+            </div>
+          )}
 
-        <button id="finish-training-btn" onClick={handleFinishTraining}>Finish Training</button>
-        <button id="gohome" onClick={goHome}>Home</button>
-      </main>
+          <button id="finish-training-btn" onClick={handleFinishTraining}>Finish Training</button>
+          <button id="gohome" onClick={goHome}>Home</button>
+        </main>
+      </div>
       <footer>
         <p>&copy; 2024 Gym Log</p>
       </footer>

@@ -27,6 +27,8 @@ const NewAccount = () => {
   };
 
   return (
+    <div id="signup-component-template">
+    <h1>GymApp</h1>
     <div id="new-account-container">
       <h2>Create Account</h2>
       {error && <div>{error}</div>}
@@ -67,6 +69,10 @@ const NewAccount = () => {
         <button type="submit">Create Account</button>
       </form>
       <p>Already have an account? <Link to='/login'>Log in</Link></p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Gym Log</p>
+      </footer>
     </div>
   );
 };
